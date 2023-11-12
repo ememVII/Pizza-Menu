@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-color: #f7f2e9;
+    --pizza-color: #edc84b;
+    --sold-color: #888;
+    --btn-hover: #e9bb24;
+    --font-color: #252525;
+}
+
+body {
+    font-family: "Roboto Mono", sans-serif;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    /* border-bottom: 17px solid var(--pizza-color); */
+    color: var(--font-color);
+}
+
+.header h1::before,
+.header h1::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 3rem;
+    top: 50%;
+    background-color: var(--pizza-color);
+}
+
+.header h1::before {
+    left: 0;
+}
+
+.header h1::after {
+    right: 0;
+}
+
+.menu::before,
+.menu::after
+{
+    content: '';
+    position: absolute;
+    height: 1.5px;
+    width: 100%;
+    background-color: var(--font-color);
+    margin: 2.7rem 0;
+}
+
+.menu::after {
+    bottom: 0;
+    left: 0;
+}
+
+.pizza img {
+    width: 8rem;
+}
+
+.pizza.sold-out img {
+    filter: grayscale(100%);
+}
+
+.pizza.sold-out {
+    color: var(--sold-color);
+}
+
+button {
+    background-color: var(--pizza-color);
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--btn-hover);
+}
